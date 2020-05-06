@@ -4,6 +4,7 @@ import com.request.vo.User;
 import com.request.vo.result.RestResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.UUID;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class SendMessageController {
 
     @Resource

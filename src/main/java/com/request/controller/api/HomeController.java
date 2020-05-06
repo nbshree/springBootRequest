@@ -7,11 +7,13 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.subject.Subject;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 @RestController
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class HomeController {
     @Resource
     LoginService loginService;

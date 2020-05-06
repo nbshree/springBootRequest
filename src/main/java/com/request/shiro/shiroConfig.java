@@ -49,13 +49,13 @@ public class shiroConfig {
         map.put("/logout", "logout");
         //对所有用户认证
         map.put("/**", "authc");
-        //登录
-        shiroFilterFactoryBean.setLoginUrl("/login");
-        //首页
-        shiroFilterFactoryBean.setSuccessUrl("/index");
-        //错误页面，认证不通过跳转
-        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
-        shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
+//        //登录
+//        shiroFilterFactoryBean.setLoginUrl("/api/login");
+//        //首页
+//        shiroFilterFactoryBean.setSuccessUrl("/index");
+//        //错误页面，认证不通过跳转
+//        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+//        shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         return shiroFilterFactoryBean;
     }
 
