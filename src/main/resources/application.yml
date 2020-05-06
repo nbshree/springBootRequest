@@ -1,0 +1,5 @@
+server:
+  port: 4011
+spring:
+  application:
+    name: my-request
