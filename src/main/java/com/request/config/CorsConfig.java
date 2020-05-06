@@ -13,6 +13,8 @@ public class CorsConfig {
         corsConfiguration.addAllowedOrigin("*"); // 1允许任何域名使用
         corsConfiguration.addAllowedHeader("*"); // 2允许任何头
         corsConfiguration.addAllowedMethod("*"); // 3允许任何方法（post、get等）
+        corsConfiguration.setMaxAge(3600L);         // 预检请求的有效期，单位为秒。
+        corsConfiguration.setAllowCredentials(true);// 是否支持安全证书(必需参数)
         return corsConfiguration;
     }
 
