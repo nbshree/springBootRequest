@@ -1,5 +1,6 @@
 package com.request.shiro;
 
+import javax.servlet.Filter;
 import com.request.shiro.CustomRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -49,13 +50,15 @@ public class shiroConfig {
         map.put("/logout", "logout");
         //对所有用户认证
         map.put("/**", "authc");
-        //登录
+//        //登录
         shiroFilterFactoryBean.setLoginUrl("/api/login");
-        //首页
-        shiroFilterFactoryBean.setSuccessUrl("/index");
-        //错误页面，认证不通过跳转
-        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+//        //首页
+//        shiroFilterFactoryBean.setSuccessUrl("/index");
+//        //错误页面，认证不通过跳转
+//        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
+        Map<String, Filter> filters = shiroFilterFactoryBean.getFilters();//获取filters
+        filters.put("authc", new ShiroLoginFilter());//将自定义 的FormAuthenticationFilter注入shiroFilter中
         return shiroFilterFactoryBean;
     }
 

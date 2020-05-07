@@ -15,8 +15,11 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class HomeController {
+
     @Resource
     LoginService loginService;
+
+
     @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public RestResult login(@RequestParam String userName, @RequestParam String userPwd) {
             // Shiro登录
